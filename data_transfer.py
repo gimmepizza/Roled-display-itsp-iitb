@@ -4,10 +4,11 @@ import time
 
 os.system('clear')
 print "Searching for HC-05..."
-# devices=bluetooth.discover_devices()
-time.sleep(3)
+devices=bluetooth.discover_devices()
+#time.sleep(3)
+
 #Searching for HC-05 in the detected devices
-'''
+
 hc05_found=False
 
 for device in devices:
@@ -34,20 +35,19 @@ sock=bluetooth.BluetoothSocket(bluetooth.RFCOMM)
 sock.connect((device,port))
 print "Connected.\n"
 time.sleep(1)
-'''
+
 # Sending 'r' to refresh
 print "Refreshing..."
-#sock.send('r')
+sock.send('r')
 time.sleep(0.5)
 print "Refreshing complete."
-'''
+
 # Sending data of file to arduino via bluetooth
 file=open("data_mono.txt",'r')
 data=file.read()
 percent=0.00
 index=0
-'''
-'''
+
 for index in range(len(data)):
 	os.system('clear')
 	print "Sending data...%.2f"%percent+"%"
@@ -62,7 +62,8 @@ for index in range(2000):
 	print "Sending data...%.2f"%percent+"%"
 	percent=(index*100.00)/2000
 	time.sleep(0.005)
+'''
 os.system('clear')
 print "Sending data...100.00%\nData sent."
 time.sleep(1)
-#sock.close()
+sock.close()
