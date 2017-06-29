@@ -1,4 +1,5 @@
 # RoLED-Display
+#beni madhav agrawal,yash shah(ys1998), sarthak mallick
 Image Processing code and Arduino Sketch for Rotating LED Display project
 
 Keep the directory structure intact.
